@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hive Progress Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <h1>Hive Progress Analyzer</h1>
+
+    <section class="card">
+      <h2>Inputs</h2>
+
+      <label>
+        Gamemode
+        <select id="modeSelect">
+          <option value="bedwars">BedWars</option>
+          <option value="skywars">SkyWars</option>
+          <option value="blockdrop">Block Drop</option>
+          <option value="blockparty">Block Party</option>
+          <option value="bridge">The Bridge</option>
+          <option value="buildbattle">Build Battle</option>
+          <option value="ctf">Capture the Flag</option>
+          <option value="deathrun">Deathrun</option>
+          <option value="gravity">Gravity</option>
+          <option value="groundwars">Ground Wars</option>
+          <option value="hideandseek">Hide and Seek</option>
+          <option value="murdermystery">Murder Mystery</option>
+          <option value="survivalgames">Survival Games</option>
+        </select>
+      </label>
+
+      <label>
+        Total XP
+        <input type="number" id="xpInput" min="0" value="0" />
+      </label>
+
+      <label>
+        Games Played
+        <input type="number" id="gamesInput" min="0" value="0" />
+      </label>
+
+      <label>
+        Games Won
+        <input type="number" id="winsInput" min="0" value="0" />
+      </label>
+
+      <label>
+        Target Level (optional, default = next level)
+        <input type="number" id="targetLevelInput" min="1" />
+      </label>
+
+      <button id="calcBtn">Calculate</button>
+    </section>
+
+    <section class="card">
+      <h2>Results</h2>
+      <div id="results">
+        <p>Fill in your stats and click <strong>Calculate</strong>.</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
