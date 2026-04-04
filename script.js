@@ -1,4 +1,9 @@
 
+let globalXp = 0;
+let globalGames = 0;
+let globalWins = 0;
+let globalTable = [];
+
 // XP tables: cumulative XP required to reach each level (index 0 = level 1)
 const XP_TABLES = {
   bedwars: [
@@ -89,6 +94,7 @@ const XP_TABLES = {
     129150,135450,141900,148500,155250,162150,169200,176400,183750
   ]
 };
+
 
 // Compute level info
 function getLevelInfo(mode, xp) {
