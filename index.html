@@ -19,6 +19,7 @@
   <div class="app">
     <h1>Hive Progress Analyzer</h1>
 
+    <!-- INPUT CARD -->
     <section class="card">
       <h2>Inputs</h2>
 
@@ -64,13 +65,14 @@
       <button id="calcBtn">Calculate</button>
     </section>
 
+    <!-- RESULTS CARD -->
     <section class="card">
       <h2>Results</h2>
       <div id="results">
         <p>Fill in your stats and click Calculate.</p>
       </div>
 
-      <!-- Progress Bar with Percentage Text -->
+      <!-- PROGRESS BAR -->
       <div id="progressBarContainer" style="
         margin-top:20px;
         display:none;
@@ -102,6 +104,26 @@
         "></div>
       </div>
     </section>
+
+    <!-- GRIND CALCULATOR -->
+    <section class="card">
+      <h2>Grind Calculator</h2>
+
+      <label>
+        Average Game Length (minutes)
+        <input type="number" id="avgGameLength" min="1" value="4">
+      </label>
+
+      <label>
+        Games Per Day
+        <input type="number" id="gamesPerDay" min="1" value="10">
+      </label>
+
+      <button id="grindCalcBtn">Calculate Grind Time</button>
+
+      <div id="grindResults" style="margin-top:15px;"></div>
+    </section>
+
   </div>
 
   <footer style="text-align:center; opacity:0.6; font-size:12px; margin-top:40px;">
