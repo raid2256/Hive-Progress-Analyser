@@ -254,14 +254,5 @@ document.getElementById("calcBtn").addEventListener("click", () => {
     progressBar.style.width = formatPercent(info.progressToNext);
   }
 
-  // Shareable link
-  const shareURL =
-    `${window.location.origin}${window.location.pathname}` +
-    `?mode=${mode}&xp=${xp}&games=${games}&wins=${wins}`;
 
-  resultsDiv.innerHTML += `
-    <p class="small">Shareable link:</p>
-    <p style="word-break:break-all;">${shareURL}</p>
-  `;
 });
-
