@@ -245,7 +245,7 @@ document.getElementById("calcBtn").addEventListener("click", () => {
     </p>
   `;
 
- // Progress bar update
+// Progress bar update
 const progressBarContainer = document.getElementById("progressBarContainer");
 const progressBar = document.getElementById("progressBar");
 const progressText = document.getElementById("progressText");
@@ -253,9 +253,11 @@ const progressText = document.getElementById("progressText");
 if (progressBarContainer && progressBar && progressText) {
   progressBarContainer.style.display = "block";
 
-  const percentText = formatPercent(info.progressToNext);
+  const maxXp = table[table.length - 1];
+  const rawPercent = (xp / maxXp) * 100;
+  const percentText = rawPercent.toFixed(2) + "%";
 
-  progressBar.style.width = percentText;
+  progressBar.style.width = rawPercent + "%";
   progressText.textContent = percentText;
 }
 
