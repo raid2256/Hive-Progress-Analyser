@@ -262,3 +262,50 @@ if (progressBarContainer && progressBar && progressText) {
 }
 
 });
+
+// Grind Calculator
+document.getElementById("grindCalcBtn").addEventListener("click", () => {
+  const avgMins = Number(document.getElementById("avgGameLength").value) || 0;
+  const gpd = Number(document.getElementById("gamesPerDay").value) || 0;
+
+  const grindDiv = document.getElementById("grindResults");
+
+  if (avgMins <= 0 || gpd <= 0) {
+    grindDiv.innerHTML = "<p>Please enter valid numbers.</p>";
+    return;
+  }
+
+  const xpPerGame = games > 0 ? xp / games : 0;
+  const xpPerDay = xpPerGame * gpd;
+
+  const maxXp = table[table.length - 1];
+  const xpRemaining = Math.max(0, maxXp - xp);
+
+  const daysToMax = xpPerDay > 0 ? xpRemaining / xpPerDay : Infinity;
+  const hoursPerDay = (avgMins * gpd) / 60;
+  const totalHoursToMax = daysToMax * hoursPerDay;
+
+  grindDiv.innerHTML = `
+    <div class="result-grid">
+      <div class="result-item">
+        <h3>XP per Day</h3>
+        <p>${formatNumber(xpPerDay)} XP</p>
+      </div>
+
+      <div class="result-item">
+        <h3>Days to Max Level</h3>
+        <p>${daysToMax === Infinity ? "N/A" : daysToMax.toFixed(1)}</p>
+      </div>
+
+      <div class="result-item">
+        <h3>Hours per Day</h3>
+        <p>${hoursPerDay.toFixed(1)} hours</p>
+      </div>
+
+      <div class="result-item">
+        <h3>Total Hours to Max</h3>
+        <p>${totalHoursToMax === Infinity ? "N/A" : totalHoursToMax.toFixed(1)}</p>
+      </div>
+    </div>
+  `;
+});
