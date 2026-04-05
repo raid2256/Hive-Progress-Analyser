@@ -168,7 +168,10 @@ document.getElementById("calcBtn").addEventListener("click", () => {
 
   const resultsDiv = document.getElementById("results");
 
-    // Update globals for grind calculator
+  // DEFINE TABLE FIRST (fixes your error)
+  const table = XP_TABLES[mode];
+
+  // Update globals for grind calculator
   globalXp = xp;
   globalGames = games;
   globalWins = wins;
@@ -180,7 +183,6 @@ document.getElementById("calcBtn").addEventListener("click", () => {
   localStorage.setItem("games", games);
   localStorage.setItem("wins", wins);
 
-  const table = XP_TABLES[mode];
   if (!table) {
     resultsDiv.innerHTML = "<p>Unknown gamemode.</p>";
     return;
