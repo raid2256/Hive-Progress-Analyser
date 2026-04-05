@@ -168,6 +168,12 @@ document.getElementById("calcBtn").addEventListener("click", () => {
 
   const resultsDiv = document.getElementById("results");
 
+    // Update globals for grind calculator
+  globalXp = xp;
+  globalGames = games;
+  globalWins = wins;
+  globalTable = table;
+
   // Save to localStorage
   localStorage.setItem("mode", mode);
   localStorage.setItem("xp", xp);
